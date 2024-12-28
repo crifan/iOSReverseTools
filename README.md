@@ -2,6 +2,12 @@
 
 * Update: `20241228`
 
+## Repo
+
+https://github.com/crifan/iOSReverseTools
+
+https://github.com/crifan/iOSReverseTools.git
+
 ## Function
 
 Collect iOS reverse related tools for everyone use
