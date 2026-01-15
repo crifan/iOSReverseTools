@@ -1,13 +1,13 @@
 #!/bin/bash
 # Function: Export/Extract single Mach-O file string and resources related info
 # Author: Crifan Li
-# Update: 20241228
+# Update: 20250113
 # Refer: 
 #  /Users/crifan/dev/dev_root/androidReverse/CloudPhone/Douyin/dy297/soLibs/common/exportElf_StrResInfo.sh
 #  https://book.crifan.org/books/ios_re_static_analysis/website/analysis_content/export_str_res/common_suite/
 # Usage:
 #   chmod +x exportMacho_StrResInfo.sh
-#   ./exportMacho_StrResInfo.sh input/dyld output
+#   ./exportMacho_StrResInfo.sh inputMachOFile outputFolder
 
 # SEPERATOR="--------------------"
 SEPERATOR="===================="
@@ -95,9 +95,6 @@ log "Exporting info use otool"
 otool -l "${inputFile}" > ${outputFoler}/"${outputMachoFile}"_otool_l.${outpuFileSuffix}
 otool -oV "${inputFile}" > ${outputFoler}/""${outputMachoFile}""_otool_oV.${outpuFileSuffix}
 
-log "Exporting info use nm"
-nm "${inputFile}" > ${outputFoler}/"${outputMachoFile}"_nm.${outpuFileSuffix}
-
 log "Exporting info use strings"
 strings "${inputFile}" > ${outputFoler}/"${outputMachoFile}"_strings.${outpuFileSuffix}
 
@@ -150,5 +147,8 @@ log "Exporting code sign info use codesign"
 codesign -vv -d "${inputFile}" &> ${outputFoler}/"${outputMachoFile}"_codesign.${outpuFileSuffix}
 # #   for app
 # codesign -vv -d xxx.App > iOSApp_codesign.txt
+
+log "Exporting info use nm"
+nm "${inputFile}" > ${outputFoler}/"${outputMachoFile}"_nm.${outpuFileSuffix}
 
 log "Exporting info Done"
