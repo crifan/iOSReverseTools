@@ -1,6 +1,6 @@
 # iOSReverseTools
 
-* Update: `20260115`
+* Update: `20260324`
 
 ## Repo
 
@@ -60,9 +60,8 @@ Collect iOS reverse related tools for everyone use
     │   │           ├── AutoRename
     │   │           │   ├── AutoRename.py
     │   │           │   └── README.md
-    │   │           ├── exportIDASymbol
+    │   │           ├── idaExportSymbol
     │   │           │   ├── README.md
-    │   │           │   └── exportIDASymbol.py
     │   │           └── ida_search_block
     │   │               ├── README.md
     │   │               └── ida_search_block.py
